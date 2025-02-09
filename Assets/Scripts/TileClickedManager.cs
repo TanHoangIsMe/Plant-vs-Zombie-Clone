@@ -6,7 +6,7 @@ public class TileClickedManager : MonoBehaviour
 {
     [SerializeField] private Tilemap tileMap;
     [SerializeField] private Camera mainCamera;
-    [SerializeField] private GameObject a;
+    [SerializeField] private GameObject character;
 
     private void Update()
     {
@@ -32,22 +32,22 @@ public class TileClickedManager : MonoBehaviour
                 {
                     updatedValueX = (float)worldPosOfTile.x + 0.8f;
                     spawnPos = new Vector3(updatedValueX, worldPosOfTile.y, 0f);
-                    Instantiate(a, spawnPos, Quaternion.identity);
+                    Instantiate(character, spawnPos, Quaternion.identity);
                 }else if((int)result == 1)
                 {
-                    Instantiate(a, worldPosOfTile, Quaternion.identity);
+                    Instantiate(character, worldPosOfTile, Quaternion.identity);
                 }else if((int)result == 2)
                 {
                     updatedValueY = (float)worldPosOfTile.y + 0.8f;
                     spawnPos = new Vector3(worldPosOfTile.x, updatedValueY, 0f);
-                    Instantiate(a, spawnPos, Quaternion.identity);
+                    Instantiate(character, spawnPos, Quaternion.identity);
                 }
                 else
                 {
                     updatedValueX = (float)worldPosOfTile.x + 0.8f;
                     updatedValueY = (float)worldPosOfTile.y + 0.8f;
                     spawnPos = new Vector3(updatedValueX, updatedValueY, 0f);
-                    Instantiate(a, spawnPos, Quaternion.identity);
+                    Instantiate(character, spawnPos, Quaternion.identity);
                 }
 
             }
