@@ -64,7 +64,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -78,7 +78,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 40
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -102,7 +102,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -169,12 +169,12 @@ TextureImporter:
       name: Shot_0
       rect:
         serializedVersion: 2
-        x: 35
+        x: 36
         y: 0
-        width: 49
-        height: 71
+        width: 47
+        height: 70
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -191,12 +191,12 @@ TextureImporter:
       name: Shot_1
       rect:
         serializedVersion: 2
-        x: 162
+        x: 163
         y: 0
-        width: 46
-        height: 71
+        width: 57
+        height: 70
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -213,12 +213,12 @@ TextureImporter:
       name: Shot_2
       rect:
         serializedVersion: 2
-        x: 207
-        y: 32
-        width: 14
-        height: 13
+        x: 291
+        y: 0
+        width: 64
+        height: 70
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -232,37 +232,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Shot_3
-      rect:
-        serializedVersion: 2
-        x: 290
-        y: 0
-        width: 46
-        height: 71
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 176a06538c80aeac0800000000000000
-      internalID: -3825235277515807119
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Shot_4
       rect:
         serializedVersion: 2
-        x: 337
-        y: 39
-        width: 9
-        height: 10
+        x: 417
+        y: 0
+        width: 71
+        height: 70
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -276,111 +254,23 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Shot_5
+      name: Shot_3
       rect:
         serializedVersion: 2
-        x: 416
-        y: 0
-        width: 49
-        height: 71
+        x: 483
+        y: 37
+        width: 4
+        height: 1
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: f4b30dc7df4310780800000000000000
-      internalID: -8718629140287177905
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Shot_6
-      rect:
-        serializedVersion: 2
-        x: 471
-        y: 45
-        width: 7
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ea3a888235178cf50800000000000000
-      internalID: 6901891030921552814
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Shot_7
-      rect:
-        serializedVersion: 2
-        x: 336
-        y: 28
-        width: 9
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c6554a0326e18db50800000000000000
-      internalID: 6618073059492648300
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Shot_8
-      rect:
-        serializedVersion: 2
-        x: 339
-        y: 35
-        width: 16
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 963d80bbd81ab44a0800000000000000
-      internalID: -6608010398135692439
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Shot_9
-      rect:
-        serializedVersion: 2
-        x: 469
-        y: 25
-        width: 19
-        height: 14
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e9af306195fc3cd00800000000000000
-      internalID: 991864324480039582
+      spriteID: 084f4e22bc5de9d4692c2ffa71bc9977
+      internalID: -3825235277515807119
       vertices: []
       indices: 
       edges: []
@@ -389,7 +279,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: e87e44a0b66b0064889d7aad044e18f6
     internalID: 0
     vertices: []
     indices: 
@@ -398,7 +288,17 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Shot_0: -2625406059805260970
+      Shot_1: -8502188156620399341
+      Shot_2: -3450133095002218573
+      Shot_3: -3825235277515807119
+      Shot_4: 7249728514726557410
+      Shot_5: -8718629140287177905
+      Shot_6: 6901891030921552814
+      Shot_7: 6618073059492648300
+      Shot_8: -6608010398135692439
+      Shot_9: 991864324480039582
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

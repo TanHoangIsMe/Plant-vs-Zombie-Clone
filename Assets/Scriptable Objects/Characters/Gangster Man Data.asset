@@ -14,4 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Hp: 0
   Att: 0
+  AttRange: 7
   Cost: 0

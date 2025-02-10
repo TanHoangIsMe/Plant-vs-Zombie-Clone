@@ -10,6 +10,11 @@ public class TileClickedManager : MonoBehaviour
 
     private void Update()
     {
+        CheckCharacterPlacement();           
+    }
+
+    private void CheckCharacterPlacement()
+    {
         if (Input.GetMouseButtonDown(0))
         {
             // Change click position onscreen to world position
@@ -22,39 +27,26 @@ public class TileClickedManager : MonoBehaviour
             TileBase clickedTile = tileMap.GetTile(gridPos);
 
             // Check if clicked tile can place character
-            if (Enum.TryParse<IndustryValidTileName>(clickedTile.name.ToString(), out IndustryValidTileName result))
-            {
-                Vector3 worldPosOfTile = tileMap.CellToWorld(gridPos);
-                float updatedValueX;
-                float updatedValueY;
-                Vector3 spawnPos;
-                if ((int)result == 0)
-                {
-                    updatedValueX = (float)worldPosOfTile.x + 0.8f;
-                    spawnPos = new Vector3(updatedValueX, worldPosOfTile.y, 0f);
-                    Instantiate(character, spawnPos, Quaternion.identity);
-                }else if((int)result == 1)
-                {
-                    Instantiate(character, worldPosOfTile, Quaternion.identity);
-                }else if((int)result == 2)
-                {
-                    updatedValueY = (float)worldPosOfTile.y + 0.8f;
-                    spawnPos = new Vector3(worldPosOfTile.x, updatedValueY, 0f);
-                    Instantiate(character, spawnPos, Quaternion.identity);
-                }
-                else
-                {
-                    updatedValueX = (float)worldPosOfTile.x + 0.8f;
-                    updatedValueY = (float)worldPosOfTile.y + 0.8f;
-                    spawnPos = new Vector3(updatedValueX, updatedValueY, 0f);
-                    Instantiate(character, spawnPos, Quaternion.identity);
-                }
-
-            }
-            else
-            {
-                Debug.Log($"Clicked tile '{clickedTile}' is not a valid enum.");
-            }
+            if (clickedTile != null && Enum.TryParse<IndustryValidTileName>(clickedTile.name.ToString(), out IndustryValidTileName result))
+                SpawnCharacter(gridPos, clickedTile, (int)result);
         }
+    }
+
+    private void SpawnCharacter(Vector3Int gridPos, TileBase clickedTile, int result)
+    {
+        // get spawn position
+        Vector3 worldPosOfTile = tileMap.CellToWorld(gridPos);
+        worldPosOfTile += new Vector3(0, 0.8f, 0);
+
+        Vector3 spawnPos =
+            (int)result == 0 ?
+            new Vector3(worldPosOfTile.x + 0.8f, worldPosOfTile.y, 0) :
+            (int)result == 1 ?
+            worldPosOfTile :
+            (int)result == 2 ?
+            new Vector3(worldPosOfTile.x, worldPosOfTile.y + 0.8f, 0) :
+            new Vector3(worldPosOfTile.x + 0.8f, worldPosOfTile.y + 0.8f, 0);
+
+        Instantiate(character, spawnPos, Quaternion.identity);
     }
 }
