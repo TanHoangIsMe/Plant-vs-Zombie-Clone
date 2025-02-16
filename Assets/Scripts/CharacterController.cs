@@ -7,15 +7,13 @@ public class CharacterController : MonoBehaviour
     // character attack range
     private float distance;
     private Animator animator;
-    private ParticleSystem particleSystem;
+    private GameObject trail;
 
     private void Awake()
     {
         distance = characterData.AttRange * 1.6f + 0.8f;
         animator = GetComponent<Animator>();
-        Transform child = transform.GetChild(0);
-        if (child != null)
-            particleSystem = child.GetComponent<ParticleSystem>();
+        trail = transform.GetChild(0).gameObject;
     }
 
     private void Update()
@@ -26,16 +24,11 @@ public class CharacterController : MonoBehaviour
     private void CheckEnemyInZone()
     {
         RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.right, distance,LayerMask.GetMask("Zombie"));
-
-        if (hit.collider == null)
-            animator.SetBool("Can Attack", false);
-        else
-            animator.SetBool("Can Attack", true);      
+        animator.SetBool("Can Attack", hit.collider != null);
     }
 
     private void Attack()
     {
-        if(particleSystem != null)
-            particleSystem.Play();
+        if(trail != null) trail.SetActive(true);
     }
 }

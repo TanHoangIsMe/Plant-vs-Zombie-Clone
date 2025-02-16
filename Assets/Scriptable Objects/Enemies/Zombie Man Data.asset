@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9da6fd9575b2614438243d80524cf2be, type: 3}
   m_Name: Zombie Man Data
   m_EditorClassIdentifier: 
-  Hp: 0
+  Hp: 5
   Att: 0
   Spd: 0.2
