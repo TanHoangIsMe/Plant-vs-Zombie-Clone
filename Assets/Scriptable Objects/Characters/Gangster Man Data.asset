@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bccc10a88d0fe0e468306f4d91863eb0, type: 3}
   m_Name: Gangster Man Data
   m_EditorClassIdentifier: 
-  Hp: 0
+  Hp: 3
   Att: 0
   AttRange: 7
   Cost: 0
