@@ -38,20 +38,21 @@ public class EnemyController : MonoBehaviour
         animator.SetBool("Can Attack", false);
     }
 
-    public void TakeDamage()
+    public void TakeDamage(int att)
     {
-        if(currentHp == 0) Destroy(gameObject);
+        currentHp -= att;
+        if(currentHp <= 0) Destroy(gameObject);
     }
 
     private void Attack()
     {
         if (targetsList.Count > 0)
-            targetsList[targetsList.Count - 1].TakeDamage();
+            targetsList[targetsList.Count - 1].TakeDamage(enemyData.Att);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Character"))
+        if (collision.gameObject.layer == 7)
         {
             targetsList.Add(collision.gameObject.GetComponent<CharacterController>());
 
@@ -62,7 +63,7 @@ public class EnemyController : MonoBehaviour
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Character"))
+        if (collision.gameObject.layer == 7)
         {
             targetsList.RemoveAt(targetsList.Count - 1);
 

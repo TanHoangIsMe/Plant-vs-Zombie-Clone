@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Zombie Man Data
   m_EditorClassIdentifier: 
   Hp: 20
-  Att: 0
+  Att: 1
   Spd: 0.2

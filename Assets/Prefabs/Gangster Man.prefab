@@ -12,9 +12,8 @@ GameObject:
   - component: {fileID: 6499704193874291575}
   - component: {fileID: 1672301367365969966}
   - component: {fileID: 2464928822502794568}
-  - component: {fileID: -2867744439234291088}
   - component: {fileID: 7363014672440122718}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Gangster Man
   m_TagString: Character
   m_Icon: {fileID: 0}
@@ -160,33 +159,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.075, y: 1.75}
   m_EdgeRadius: 0
---- !u!50 &-2867744439234291088
-Rigidbody2D:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3390930593482333643}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 0.0001
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 1
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!114 &7363014672440122718
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -252,47 +224,23 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bullet Trail
       objectReference: {fileID: 0}
-    - target: {fileID: 8246831490948380877, guid: 92887a3325d45aa41a97f3d69f929d15, type: 3}
-      propertyPath: m_IsActive
+    - target: {fileID: 8408601727979567411, guid: 92887a3325d45aa41a97f3d69f929d15, type: 3}
+      propertyPath: TriggerModule.enter
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8408601727979567411, guid: 92887a3325d45aa41a97f3d69f929d15, type: 3}
-      propertyPath: looping
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8408601727979567411, guid: 92887a3325d45aa41a97f3d69f929d15, type: 3}
-      propertyPath: playOnAwake
+      propertyPath: TriggerModule.inside
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8408601727979567411, guid: 92887a3325d45aa41a97f3d69f929d15, type: 3}
-      propertyPath: CollisionModule.radiusScale
-      value: 0.6
+      propertyPath: TriggerModule.enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8246831490948380877, guid: 92887a3325d45aa41a97f3d69f929d15, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 4969129812335400094}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 92887a3325d45aa41a97f3d69f929d15, type: 3}
---- !u!1 &598538797518414921 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8246831490948380877, guid: 92887a3325d45aa41a97f3d69f929d15, type: 3}
-  m_PrefabInstance: {fileID: 8808141820096961668}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &4969129812335400094
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 598538797518414921}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: efa67b15ac7e46046bb6d750dceb9a88, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &4111524773027953412 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4842459963100555136, guid: 92887a3325d45aa41a97f3d69f929d15, type: 3}

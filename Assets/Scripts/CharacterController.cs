@@ -8,14 +8,20 @@ public class CharacterController : MonoBehaviour
     private float distance;
     private Animator animator;
     private GameObject trail;
+    private TrailCollisionCatcher trailCollisionCatcher;
     private int currentHp;
 
     private void Awake()
     {
-        distance = characterData.AttRange * 1.6f + 0.8f;
         animator = GetComponent<Animator>();
-        trail = transform.GetChild(0).gameObject;
+
+        distance = characterData.AttRange * 1.6f + 0.8f;
         currentHp = characterData.Hp;
+        
+        trail = transform.GetChild(0).gameObject;
+        trailCollisionCatcher = trail.GetComponent<TrailCollisionCatcher>();
+        if(trailCollisionCatcher != null )
+        trailCollisionCatcher.Att = characterData.Att;
     }
 
     private void Update()
@@ -34,10 +40,9 @@ public class CharacterController : MonoBehaviour
         if(trail != null) trail.SetActive(true);
     }
 
-    public void TakeDamage()
+    public void TakeDamage(int att)
     {        
-        currentHp -= 1;
-        Debug.Log(gameObject.name + "-" + currentHp);
-        if (currentHp == 0) Destroy(gameObject);
+        currentHp -= att;
+        if (currentHp <= 0) Destroy(gameObject);
     }
 }

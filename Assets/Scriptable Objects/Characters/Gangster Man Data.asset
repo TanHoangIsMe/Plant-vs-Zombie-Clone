@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Gangster Man Data
   m_EditorClassIdentifier: 
   Hp: 3
-  Att: 0
+  Att: 1
   AttRange: 7
   Cost: 0
