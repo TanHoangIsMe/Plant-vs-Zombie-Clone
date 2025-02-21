@@ -20,6 +20,11 @@ public class TileClickedManager : MonoBehaviour
             // Change click position onscreen to world position
             Vector3 worldPos = mainCamera.ScreenToWorldPoint(Input.mousePosition);
 
+            // Prevent spawn character on same tile
+            RaycastHit2D[] hits = Physics2D.RaycastAll(worldPos, Vector2.zero);
+            foreach (RaycastHit2D hit in hits)
+                if (hit.collider.gameObject.layer == 7) return; 
+
             // Change world position to tile map position
             Vector3Int gridPos = tileMap.WorldToCell(worldPos);
 
@@ -39,14 +44,14 @@ public class TileClickedManager : MonoBehaviour
         worldPosOfTile += new Vector3(0, 0.8f, 0);
 
         Vector3 spawnPos =
-            (int)result == 0 ?
-            new Vector3(worldPosOfTile.x + 0.8f, worldPosOfTile.y, 0) :
             (int)result == 1 ?
-            worldPosOfTile :
+            new Vector3(worldPosOfTile.x + 0.8f, worldPosOfTile.y, 0) :
             (int)result == 2 ?
+            worldPosOfTile :
+            (int)result == 3 ?
             new Vector3(worldPosOfTile.x, worldPosOfTile.y + 0.8f, 0) :
             new Vector3(worldPosOfTile.x + 0.8f, worldPosOfTile.y + 0.8f, 0);
 
-        Instantiate(character, spawnPos, Quaternion.identity);
+            Instantiate(character, spawnPos, Quaternion.identity);
     }
 }

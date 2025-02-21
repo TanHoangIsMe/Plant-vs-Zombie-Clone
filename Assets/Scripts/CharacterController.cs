@@ -4,17 +4,17 @@ public class CharacterController : MonoBehaviour
 {
     [SerializeField] private CharactersData characterData;
 
-    // character attack range
-    private float distance;
     private Animator animator;
     private GameObject trail;
     private TrailCollisionCatcher trailCollisionCatcher;
+    private Vector3 startPos;
+    private float distance; // character attack range
     private int currentHp;
 
     private void Awake()
     {
         animator = GetComponent<Animator>();
-
+        startPos = transform.position - new Vector3(0,0.8f,0);
         distance = characterData.AttRange * 1.6f + 0.8f;
         currentHp = characterData.Hp;
         
@@ -31,7 +31,7 @@ public class CharacterController : MonoBehaviour
 
     private void CheckEnemyInZone()
     {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.right, distance,LayerMask.GetMask("Zombie"));
+        RaycastHit2D hit = Physics2D.Raycast(startPos, transform.right, distance,LayerMask.GetMask("Zombie"));
         animator.SetBool("Can Attack", hit.collider != null);
     }
 
@@ -43,6 +43,6 @@ public class CharacterController : MonoBehaviour
     public void TakeDamage(int att)
     {        
         currentHp -= att;
-        if (currentHp <= 0) Destroy(gameObject);
+        if (currentHp <= 0) Destroy(gameObject); 
     }
 }
