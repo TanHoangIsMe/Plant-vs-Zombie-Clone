@@ -41,7 +41,11 @@ public class CharacterController : MonoBehaviour
     }
 
     public void TakeDamage(int att)
-    {        
+    {
+        // set second layer index above base layer
+        animator.SetLayerWeight(1, 1f);
+        animator.SetTrigger("Hit");
+
         currentHp -= att;
         if (currentHp <= 0) Destroy(gameObject); 
     }
