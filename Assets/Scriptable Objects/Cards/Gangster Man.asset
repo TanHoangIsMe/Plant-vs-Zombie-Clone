@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2e74bf2b0770ce43b9893c9d7198c42, type: 3}
+  m_Name: Gangster Man
+  m_EditorClassIdentifier: 
+  id: 1
+  avatar: {fileID: 8150759692636176867, guid: 5641d0e483a712b46a1041cd2ed7d282, type: 3}
+  character: {fileID: 3390930593482333643, guid: 472d853e0bab85e4d8fa44c3ef9b381c, type: 3}
+  price: 100
