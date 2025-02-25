@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 460e3eb06e9700e44b113fa13526e116, type: 3}
-  m_Name: CardDatabase
+  m_Script: {fileID: 11500000, guid: bccc10a88d0fe0e468306f4d91863eb0, type: 3}
+  m_Name: Tommy Gunner Data
   m_EditorClassIdentifier: 
-  allCardData:
-  - {fileID: 11400000, guid: 627025532085577468411f186d7a53a3, type: 2}
-  - {fileID: 11400000, guid: e97288e45e561314d9a45925656b22db, type: 2}
+  Hp: 3
+  Att: 1
+  AttRange: 7

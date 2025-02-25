@@ -8,7 +8,7 @@ public class CardController : MonoBehaviour, IPointerClickHandler
     private Image image;
 
     private CardData cardData;
-    public CardData CardData { set { cardData = value; } }
+    public CardData CardData { get { return cardData; } set { cardData = value; } }
 
     private void OnEnable()
     {

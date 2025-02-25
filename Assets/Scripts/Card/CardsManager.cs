@@ -4,19 +4,17 @@ using System.Collections.Generic;
 public class CardsManager : MonoBehaviour
 {
     [SerializeField] private CardDatabase cardDatabase;
-    [SerializeField] private List<CardController> cardControllers;
+    [SerializeField] private List<CardController> cards;
 
-    private List<int> cards = new List<int> { 1,1,1,1,1,1,1};
+    private List<int> cardList = new List<int> { 1,2,1,2,1,2,1};
 
     private void Awake()
     {
-        for (int i =0;i<cards.Count;i++)
+        for (int i =0; i<cardList.Count; i++)
         {
-            foreach (var a in cardDatabase.allCardData)
-                if (cards[i] == a.id)
-                {
-                    cardControllers[i].CardData = a;
-                }
+            foreach (var card in cardDatabase.allCardData)
+                if (card.id == cardList[i])
+                    cards[i].CardData = card;
         }
     }
 }

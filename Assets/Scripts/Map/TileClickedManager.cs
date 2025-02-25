@@ -6,17 +6,31 @@ public class TileClickedManager : MonoBehaviour
 {
     [SerializeField] private Tilemap tileMap;
     [SerializeField] private Camera mainCamera;
-    [SerializeField] private GameObject character;
-    [SerializeField] private GameObject ghostObj;
+    [SerializeField] private SpriteRenderer ghostSprite; 
 
-    private void Awake()
-    {
-        ghostObj.SetActive(false); 
-    }
-
+    private GameObject character;
+   
     private void Update()
     {
         CheckCharacterPlacement();           
+    }
+
+    private void OnEnable()
+    {
+        ghostSprite.gameObject.SetActive(false);
+
+        CardSelectionManager.OnCardSelected += UpdateCharacterPrefab;
+    }
+
+    private void OnDisable()
+    {
+        CardSelectionManager.OnCardSelected -= UpdateCharacterPrefab;
+    }
+
+    private void UpdateCharacterPrefab(CardController selectedCard)
+    {
+        character = selectedCard.CardData.character;
+        ghostSprite.sprite = selectedCard.CardData.avatar;
     }
 
     private void CheckCharacterPlacement()
@@ -42,7 +56,7 @@ public class TileClickedManager : MonoBehaviour
         if (clickedTile != null && Enum.TryParse<IndustryValidTileName>(clickedTile.name.ToString(), out IndustryValidTileName result))
             SpawnCharacter(gridPos, clickedTile, (int)result);
         else
-            ghostObj.SetActive(false);
+            ghostSprite.gameObject.SetActive(false);
     }
 
     private bool CheckSpawnCondition(Vector3 worldPos)
@@ -51,7 +65,7 @@ public class TileClickedManager : MonoBehaviour
         foreach (RaycastHit2D hit in hits)
             if (hit.collider.gameObject.layer == 7)
             {
-                ghostObj.SetActive(false);
+                ghostSprite.gameObject.SetActive(false);
                 return true;
             }
         return false;
@@ -64,8 +78,8 @@ public class TileClickedManager : MonoBehaviour
         worldPosOfTile += new Vector3(0, 0.8f, 0);
         Vector3 spawnPos = GetSpawnPos(result, worldPosOfTile);
 
-        ghostObj.transform.position = spawnPos;
-        ghostObj.SetActive(true);
+        ghostSprite.gameObject.transform.position = spawnPos;
+        ghostSprite.gameObject.SetActive(true);
 
         Spawn(spawnPos);
     }
@@ -74,7 +88,7 @@ public class TileClickedManager : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            ghostObj.SetActive(false);
+            ghostSprite.gameObject.SetActive(false);
             Instantiate(character, spawnPos, Quaternion.identity);
         }
     }

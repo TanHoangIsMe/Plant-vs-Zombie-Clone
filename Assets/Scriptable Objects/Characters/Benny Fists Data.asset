@@ -10,9 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bccc10a88d0fe0e468306f4d91863eb0, type: 3}
-  m_Name: Gangster Man Data
+  m_Name: Benny Fists Data
   m_EditorClassIdentifier: 
-  Hp: 3
-  Att: 1
-  AttRange: 7
-  Cost: 0
+  Hp: 10
+  Att: 2
+  AttRange: 1

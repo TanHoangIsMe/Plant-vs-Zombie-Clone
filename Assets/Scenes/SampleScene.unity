@@ -476,7 +476,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardDatabase: {fileID: 11400000, guid: 149930cb716395c4bab3f37dc99119a3, type: 2}
-  cardControllers:
+  cards:
   - {fileID: 632957122}
   - {fileID: 1746293378}
   - {fileID: 848464251}
@@ -545,7 +545,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 8150759692636176867, guid: 5641d0e483a712b46a1041cd2ed7d282, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 0.49019608}
   m_FlipX: 0
   m_FlipY: 0
@@ -553,7 +553,7 @@ SpriteRenderer:
   m_Size: {x: 0.7, y: 1.75}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &353747613
@@ -4784,8 +4784,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileMap: {fileID: 1174625523}
   mainCamera: {fileID: 519420031}
-  character: {fileID: 3390930593482333643, guid: 472d853e0bab85e4d8fa44c3ef9b381c, type: 3}
-  ghostObj: {fileID: 353747611}
+  ghostSprite: {fileID: 353747612}
 --- !u!1 &1871415550
 GameObject:
   m_ObjectHideFlags: 0

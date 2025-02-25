@@ -6,5 +6,4 @@ public class CharactersData : ScriptableObject
     public int Hp;
     public int Att;
     public float AttRange;
-    public float Cost;
 }
