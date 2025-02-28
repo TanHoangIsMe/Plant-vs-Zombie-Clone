@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Hp: 10
   Att: 2
-  AttRange: 1
+  AttRange: 0.1

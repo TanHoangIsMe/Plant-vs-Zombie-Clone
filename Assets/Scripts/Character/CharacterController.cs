@@ -11,6 +11,14 @@ public class CharacterController : MonoBehaviour
     private float distance; // character attack range
     private int currentHp;
 
+    // for test
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawRay(startPos, transform.right * distance);
+    }
+
+
     private void Awake()
     {
         animator = GetComponent<Animator>();

@@ -35,6 +35,8 @@ public class TileClickedManager : MonoBehaviour
 
     private void CheckCharacterPlacement()
     {
+        if (character == null) return;
+
         // Change click position onscreen to world position
         Vector3 worldPos = mainCamera.ScreenToWorldPoint(Input.mousePosition);
 
@@ -90,7 +92,14 @@ public class TileClickedManager : MonoBehaviour
         {
             ghostSprite.gameObject.SetActive(false);
             Instantiate(character, spawnPos, Quaternion.identity);
+            ResetSpawnInfo();
         }
+    }
+
+    private void ResetSpawnInfo()
+    {
+        CardSelectionManager.OnFinishSpawn?.Invoke();
+        character = null;
     }
 
     private static Vector3 GetSpawnPos(int result, Vector3 worldPosOfTile)

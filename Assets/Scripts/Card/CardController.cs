@@ -18,17 +18,24 @@ public class CardController : MonoBehaviour, IPointerClickHandler
         if (image != null) image.sprite = cardData.avatar;
 
         CardSelectionManager.OnCardSelected += HandleCardSelected;
+        CardSelectionManager.OnFinishSpawn += HandleResetSelected;
     }
 
     private void OnDisable()
     {
         CardSelectionManager.OnCardSelected -= HandleCardSelected;
+        CardSelectionManager.OnFinishSpawn -= HandleResetSelected;
     }
 
     private void HandleCardSelected(CardController selectedCard)
     {
         if (selectedCard != this)
             outline.effectColor = Color.black;
+    }
+
+    private void HandleResetSelected()
+    {
+        outline.effectColor = Color.black;
     }
 
     public void OnPointerClick(PointerEventData eventData)
