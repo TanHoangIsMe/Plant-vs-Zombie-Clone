@@ -16,7 +16,7 @@ public class CardController : MonoBehaviour, IPointerClickHandler
 
         image = transform.GetChild(0).GetComponent<Image>();
         if (image != null) image.sprite = cardData.avatar;
-
+        
         CardSelectionManager.OnCardSelected += HandleCardSelected;
         CardSelectionManager.OnFinishSpawn += HandleResetSelected;
     }
